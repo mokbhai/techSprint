@@ -1,0 +1,63 @@
+.event-creation {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-creation h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.event-creation form {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-creation form label {
+  margin-top: 1rem;
+}
+
+.event-creation form input,
+.event-creation form textarea,
+.event-creation form button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+.event-creation form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.event-creation form button:hover {
+  background-color: #0056b3;
+}
+
+.event-creation form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-creation form div input {
+  width: 48%;
+}
+
+.event-creation form div label {
+  width: 48%;
+  display: flex;
+  align-items: center;
+}
+
+.event-creation form div label input {
+  margin-right: 0.5rem;
+}

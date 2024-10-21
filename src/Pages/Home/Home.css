@@ -1,0 +1,259 @@
+.home {
+  background: rgb(254, 254, 254);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(254, 254, 254, 1) 23%,
+    rgba(52, 247, 238, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(254, 254, 254, 1) 23%,
+    rgba(52, 247, 238, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(254, 254, 254, 1) 23%,
+    rgba(52, 247, 238, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fefefe",endColorstr="#34f7ee",GradientType=1);
+}
+
+hero-left {
+  perspective: 1000px;
+}
+
+.hero {
+  box-shadow: inset 0 0 10px rgb(0, 85, 255), inset 0 0 60px rgb(255, 254, 254);
+}
+
+.hero-img {
+  -webkit-box-reflect: below 4px
+    linear-gradient(transparent, transparent, rgba(4, 4, 4, 0.267));
+}
+
+.trophy {
+  position: relative;
+  display: flex;
+  /* width: 150px; */
+  /* height: 250px; */
+  transform-style: preserve-3d;
+  animation: trophyanimate 20s linear infinite;
+}
+@keyframes trophyanimate {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.animated-shield {
+  animation: rotate-zoom 2s linear forwards;
+}
+
+@keyframes rotate-zoom {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(0);
+  }
+}
+
+.welcome-text {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Light colored shadow */
+}
+
+/* Home.css */
+.lfire,
+.rfire {
+  transition: transform 0.5s ease-in-out; /* Smooth transition for the sliding effect */
+}
+
+.lfire.slide-left {
+  transform: translateX(-100%);
+}
+
+.rfire.slide-right {
+  transform: translateX(100%);
+}
+
+.tagline.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.tagline.scroll {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+/* Home.css */
+.rotate {
+  animation: rotateShield 5s infinite linear; /* Added linear timing function for smooth rotation */
+}
+
+@keyframes rotateShield {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.neon {
+  filter: drop-shadow(0 0 0.5rem #ffffff) drop-shadow(0 0 1rem #3dabde)
+    drop-shadow(0 0 1.5rem #fff) drop-shadow(0 0 2.5rem #d400ff);
+}
+/* Home.css */
+
+/* Keyframes for the arrow up and down animation */
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Keyframes for the circle expansion animation */
+@keyframes circleExpand {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* Styles for the arrow indicator container */
+.arrow-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Styles for the arrow image */
+.arrow-container img {
+  animation: arrowBounce 2s infinite;
+}
+
+/* Styles for the expanding circles */
+.circle {
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: circleExpand 2s infinite;
+}
+
+.circle:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 1s;
+}
+.orbit-container {
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  transform-style: preserve-3d;
+  animation: rotateZ 5s linear infinite;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-image {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+}
+.bottom-row {
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.orbit-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: -50px 0; /* Adjust as needed to place the images correctly */
+}
+
+.ironman-left {
+  transform: rotateY(0deg) translateX(150px) translateY(-50%);
+}
+
+.ironman-right {
+  transform: rotateY(180deg) translateX(150px) translateY(-50%);
+}
+
+@keyframes rotateZ {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* .loadbody {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(73, 22, 94, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+  );
+} */
+/* .iconlogo {
+  color: white;
+  font-size: 15rem !important;
+} */
+/* .neon {
+  filter: drop-shadow(0 0 0.5rem #fff) drop-shadow(0 0 1rem #fff)
+    drop-shadow(0 0 1.5rem #fff) drop-shadow(0 0 2.5rem #d400ff)
+    drop-shadow(0 0 4rem #d400ff) drop-shadow(0 0 5.5rem #d400ff)
+    drop-shadow(0 0 6rem #d400ff) drop-shadow(0 0 9.5rem #d400ff);
+  animation: glowlogo 1s forwards;
+}
+@keyframes glowlogo {
+  to {
+    filter: drop-shadow(0 0 0.5rem #fff) drop-shadow(0 0 1rem #fff)
+      drop-shadow(0 0 1.5rem #fff) drop-shadow(0 0 2.5rem #d400ff)
+      drop-shadow(0 0 5rem #d400ff) drop-shadow(0 0 5.5rem #d400ff)
+      drop-shadow(0 0 6rem #d400ff);
+  }
+} */

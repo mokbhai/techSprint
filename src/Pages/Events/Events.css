@@ -1,0 +1,14 @@
+.event-section{
+    animation: slideright 2s forwards; 
+}
+
+@keyframes slideright {
+    0% {
+      left: 0;
+      width: 0;
+    }
+    100% {
+      left: 0;
+      width: 100%;
+    }
+  }

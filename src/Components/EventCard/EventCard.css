@@ -1,0 +1,89 @@
+/* import URL from "../../apiconfig"; */
+
+.flip-card {
+  margin: 20px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px 4px rgba(150, 169, 189, 0.5);
+  border-radius: 4px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 250px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+/* 
+.flip-card:nth-of-type(4n + 1) .flip-card-front,
+.flip-card:nth-of-type(4n + 1) .flip-card-back {
+  background-image: url(`${URL}/api/file/view/${event.photos[0]}`);
+} */
+/* 
+.flip-card:nth-of-type(4n + 2) .flip-card-front,
+.flip-card:nth-of-type(4n + 2) .flip-card-back {
+  background-image: url(../../Assets/card2.jpg);
+}
+
+.flip-card:nth-of-type(4n + 3) .flip-card-front,
+.flip-card:nth-of-type(4n + 3) .flip-card-back {
+  background-image: url(../../Assets/card3.jpg);
+}
+
+.flip-card:nth-of-type(4n + 4) .flip-card-front,
+.flip-card:nth-of-type(4n + 4) .flip-card-back {
+  background-image: url(../../Assets/card4.jpg);
+} */
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front::after,
+.flip-card-back::after {
+  content: "";
+  border-radius: 5px;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.flip-card-front .inner,
+.flip-card-back .inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+  z-index: 2;
+}
+
+.icon {
+  width: 40px;
+}
+
+.flip-card:hover .flip-card-front {
+  transform: rotateY(-180deg);
+}
+
+.flip-card:hover .flip-card-back {
+  transform: rotateY(0deg);
+}
