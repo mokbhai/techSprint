@@ -28,14 +28,14 @@ const HeroComp = () => {
                 SEASON 2
               </span>
               <span className="uppercase font-avengerd font-bold text-sm md:text-lg lg:text-xl w-max mt-4 p-2 bg-slate-300 text-black lg:tracking-widest rounded-xl">
-                LPU's all india interschool tech comptition 
+                LPU's all india interschool tech comptition
               </span>
               <span className="uppercase text-lg sm:text-xl md:text-2xl lg:text-2xl font-avenger my-4">
                 IN ASSOCIATION WITH Delhi Public School, Jalandhar
               </span>
               <div className="space-y-4">
                 <div className="uppercase font-bold text-base sm:text-lg md:text-xl my-2">
-                  Event Date: 12th and 13th NOVEMBER
+                  Event Date: 19th and 20th NOVEMBER
                 </div>
                 <p className="text-sm sm:text-base md:text-lg font-bold my-2">
                   NOW ACCEPTING ONLINE REGISTRATION
@@ -83,7 +83,7 @@ const HeroComp = () => {
           <p className="text-blue-800 font-bold text-lg sm:text-xl">
             LAST DATE TO REGISTER
           </p>
-          <p className="rounded-xl font-bold">8th NOVEMBER 2024</p>
+          <p className="rounded-xl font-bold">15th NOVEMBER 2024</p>
         </div>
         <div className="hidden sm:block">
           <p className="text-blue-800 font-bold text-lg sm:text-xl">
