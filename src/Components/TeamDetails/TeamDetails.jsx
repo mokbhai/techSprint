@@ -315,7 +315,7 @@ const TeamDetails = ({ teamDetails, setTeamDetails }) => {
             )}
             {index > 1 && (
               <div className="text-lg  mb-2 text-yellow-700 ">
-                Team Member {index + 1}
+                Team Member {index}
               </div>
             )}
 
@@ -324,14 +324,14 @@ const TeamDetails = ({ teamDetails, setTeamDetails }) => {
               placeholder="Name"
               value={member.name}
               onChange={(e) => handleInputChange(index, "name", e.target.value)}
-              className="w-full border px-3 py-2 bg-slate-400 text-black rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
             />
             <select
               value={member.class}
               onChange={(e) =>
                 handleInputChange(index, "class", e.target.value)
               }
-              className="w-full border px-3 py-2 bg-slate-400 text-black rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
             >
               <option value="">Select Class</option>
               <option value="5th">5th</option>
@@ -350,7 +350,7 @@ const TeamDetails = ({ teamDetails, setTeamDetails }) => {
               onChange={(e) =>
                 handleInputChange(index, "phone", e.target.value)
               }
-              className="w-full border px-3 py-2 bg-slate-400 text-black rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
             />
             <input
               type="email"
@@ -359,14 +359,14 @@ const TeamDetails = ({ teamDetails, setTeamDetails }) => {
               onChange={(e) =>
                 handleInputChange(index, "email", e.target.value)
               }
-              className="w-full border px-3 py-2 bg-slate-400 text-black rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
             />
             <select
               value={member.gender}
               onChange={(e) =>
                 handleInputChange(index, "gender", e.target.value)
               }
-              className="w-full border px-3 py-2 bg-slate-400 text-black rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
             >
               <option value="">Select Gender</option>
               <option value="Male">Male</option>

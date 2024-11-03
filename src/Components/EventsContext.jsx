@@ -7,8 +7,8 @@ const EventsContext = createContext();
 const EventsProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const EXPIRY_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
-  // const EXPIRY_TIME = 60; // 60 milliseconds
+  // const EXPIRY_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
+  const EXPIRY_TIME = 60; // 60 milliseconds
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -33,8 +33,8 @@ const EventsProvider = ({ children }) => {
       }
     };
 
-    const storedData = localStorage.getItem("events");
-    // const storedData = 0;
+    // const storedData = localStorage.getItem("events");
+    const storedData = 0;
     if (storedData) {
       const { events, expiry } = JSON.parse(storedData);
       if (Date.now() < expiry) {

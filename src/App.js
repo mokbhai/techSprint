@@ -9,6 +9,7 @@ import "./App.css";
 import InternetConnectionChecker from "./InternetConnectionChecker.jsx";
 import { AlertProvider } from "./AlertContext.js";
 import LoadingCircle from "./Components/lodingCircle";
+import Helmet from "react-helmet";
 
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const Registration = React.lazy(() =>
@@ -31,6 +32,13 @@ function App() {
         <BrowserRouter>
           <InternetConnectionChecker />
           <Suspense fallback={<LoadingCircle />}>
+            <Helmet>
+              <title>TechSprint - LPU</title>
+              <meta
+                name="description"
+                content="Registraion Open 5th to 12th Class Students"
+              />
+            </Helmet>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/registration" element={<Registration />} />
