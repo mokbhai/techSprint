@@ -11,6 +11,7 @@ import ConfirmationPopup, {
 } from "../../Components/ConfirmationPopup/ConfirmationPopup";
 import URL from "../../apiconfig";
 import { useAlert } from "../../AlertContext";
+import { Helmet } from "react-helmet";
 
 const Registration = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -393,6 +394,12 @@ const Registration = () => {
       id="registration"
       className="font-avengerd flex flex-col text-slate-400 min-h-screen bg-gray-900"
     >
+      <Helmet>
+        <title>Registration Page</title>
+        <meta name="description" content="Registraiton" />
+        <meta name="keywords" content="techsprint, lpu, techsprint2024" />
+      </Helmet>
+
       <Navbar />
       <form
         className="w-full bg-opacity-80 p-8 rounded-lg shadow-md "
@@ -401,13 +408,13 @@ const Registration = () => {
         {/* Team Name Input */}
         <div className="flex flex-col md:flex-row gap-2 opacity-80">
           <div className="mb-5 border p-4  md:w-1/2">
-            <h2 className="text-2xl mb-4   ">Team Name*:</h2>
+            <h2 className="text-2xl mb-4">Team Name*:</h2>
             <input
               type="text"
               value={teamDetails.teamName}
               onChange={handleTeamNameChange}
-              placeholder="Enter Team Name"
-              className="w-full border px-3 py-2 bg-slate-400 text-black font-semibold text-lg rounded"
+              placeholder="Team Name"
+              className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80"
               required
             />
           </div>

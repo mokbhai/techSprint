@@ -9,6 +9,7 @@ import Footer from "../../Components/Footer/Footer";
 import axios from "axios";
 import { useAlert } from "../../AlertContext";
 import LoadingCircle from "../../Components/lodingCircle";
+import { Helmet } from "react-helmet";
 
 const EventPage = () => {
   const { id: eventId } = useParams();
@@ -87,7 +88,19 @@ const EventPage = () => {
   };
 
   return (
-    <>
+    <div>
+      <Helmet>
+        <title>
+          {(event?.eventName?.toTitleCase() || "Events") + " - TechSprint LPU"}
+        </title>
+        <meta name="description" content={event?.description || ""} />
+        <meta
+          name="keywords"
+          content={
+            "TechSprint, LPU, Events, Competitions, Workshops, Exhibitions, Schedule"
+          }
+        />
+      </Helmet>
       <div
         className="bg-cover bg-center bg-fixed bg-black text-slate-300 opacity-80"
         style={{ backgroundImage: `url(${eventbg})` }}
@@ -320,7 +333,7 @@ const EventPage = () => {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

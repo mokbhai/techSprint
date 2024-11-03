@@ -8,6 +8,7 @@ import lpulogo from "../../Assets/shield.png";
 import bg from "../../Assets/bluebg.jpg";
 import { useAlert } from "../../AlertContext";
 import LoadingCircle from "../../Components/lodingCircle";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const [contacts, setContacts] = useState([]);
@@ -63,6 +64,17 @@ const Contact = () => {
         className="text-slate-400 font-avengerd w-full bg-center bg-cover bg-black bg-opacity-80 min-h-screen"
         style={{ backgroundImage: `url(${bg})` }}
       >
+        <Helmet>
+          <title>Contact Us - TechSprint LPU</title>
+          <meta
+            name="description"
+            content="Contact TechSprint, a technical carnival at Lovely Professional University (LPU) for students from Class 6 to 12.  Get in touch with us for inquiries about the event."
+          />
+          <meta
+            name="keywords"
+            content="TechSprint, LPU, Contact, Technical Carnival, School, Students, Innovation, Creativity"
+          />
+        </Helmet>
         <Navbar />
         {loading ? (
           <LoadingCircle />

@@ -4,6 +4,7 @@ import URL from "../../apiconfig";
 import Footer from "../../Components/Footer/Footer";
 import { useAlert } from "../../AlertContext";
 import LoadingCircle from "../../Components/lodingCircle";
+import { Helmet } from "react-helmet";
 
 const Gallery = () => {
   const [photos, setPhotos] = useState([]);
@@ -67,6 +68,17 @@ const Gallery = () => {
   };
   return (
     <div className="bg-gradient-to-r overflow-hidden from-slate-950 to-slate-900">
+      <Helmet>
+        <title>Gallery - TechSprint LPU: Inspiring Student Innovation</title>
+        <meta
+          name="description"
+          content="Explore the TechSprint Gallery showcasing innovative projects, exciting moments, and the creative spirit of student participants at Lovely Professional University (LPU)."
+        />
+        <meta
+          name="keywords"
+          content="TechSprint, LPU, Gallery, Photos, Images, Students, Projects, Innovation, Creativity, Technical Carnival"
+        />
+      </Helmet>
       <Navbar />
 
       <div className="flex flex-col w-full min-h-screen  ">
@@ -88,7 +100,7 @@ const Gallery = () => {
             >
               <img
                 src={getImageUrl(photoId)}
-                className="w-full h-64 object-cover object-center rounded-xl"
+                className="w-96 h-64 object-cover object-center rounded-xl"
                 alt="Gallery"
                 onClick={() => {
                   openModal(photoId);

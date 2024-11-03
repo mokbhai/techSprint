@@ -1,20 +1,15 @@
 import React, { useContext } from "react";
 import { EventsContext } from "../../../src/Components/EventsContext";
-import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import EventCard from "../../Components/EventCard/EventCard";
 import LoadingCircle from "../../Components/lodingCircle";
 import HeroComp from "./hero";
 import CompetitionComponent, { MobileCompetitionSchedule } from "./comptition";
-import ironman from "../../Assets/ironman.png";
-import ironmanr from "../../Assets/ironmanr.png";
 import WelcomeComponent from "./welcome";
-import circleForRotation from "../../Assets/circleForRotation.png";
-import trophy from "../../Assets/trophy.avif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
-import { hover } from "@testing-library/user-event/dist/hover";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const { events, loading } = useContext(EventsContext);
@@ -35,6 +30,19 @@ const Home = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col bg-center bg-black bg-cover text-slate-400">
+      <Helmet>
+        <title>
+          TechSprint - LPU's Technical Extravaganza for School Students
+        </title>
+        <meta
+          name="description"
+          content="TechSprint is a technical carnival at Lovely Professional University (LPU) designed to ignite the curiosity, creativity, and scientific spirit of students from grades 6-12. Explore exciting competitions, workshops, and exhibitions."
+        />
+        <meta
+          name="keywords"
+          content="TechSprint, LPU, Technical Carnival, School Students, Competitions, Workshops, Exhibitions, Innovation, Technology, Science"
+        />
+      </Helmet>
       <div className="flex flex-col gap-3">
         {/* Hero Section */}
         <HeroComp />
