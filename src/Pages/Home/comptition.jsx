@@ -23,7 +23,7 @@ const CompetitionSchedule = () => {
     ["Idea Pitch Contest", "Junior", "Water Rocket Challenge", "Junior"],
     ["Codecraft AI", "Junior", "Digital Art Competition", "Junior"],
     ["Water Rocket Challenge", "Senior", "Structural Showdown", "Senior"],
-    ["Tech Hustle", "Senior", "Math & Science Puzzle", "Junior"],
+    ["Tech Tustle", "Senior", "Math & Science Puzzle", "Junior"],
     ["Speed X Free Fire", "Junior", "", ""],
   ]);
 

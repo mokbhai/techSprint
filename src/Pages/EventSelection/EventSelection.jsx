@@ -36,7 +36,7 @@ const getFilteredEvents = (day, shift) => {
                 onChange={(e) => {
                   handleEventSelection(e.target.value, session);
                 }}
-                className="w-full h-12 border text-black rounded-lg py-2 px-3 bg-slate-400"
+                className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80 mb-2"
               >
                 <option value="">None</option>
                 {getFilteredEvents(

@@ -15,7 +15,7 @@ const Registrations = () => {
   });
   const [filters, setFilters] = useState({
     teamName: "",
-    isDeleted: "",
+    isDeleted: "false",
     paymentStatus: "",
     teamId: "",
   });
@@ -62,7 +62,7 @@ const Registrations = () => {
         headers: {
           authorization: localStorage.getItem("token"),
         },
-        body: JSON.stringify({ ...filters }),
+        body: JSON.stringify(filters),
       });
 
       if (!response.ok) {
@@ -144,6 +144,7 @@ const Registrations = () => {
         />
         <select
           name="isDeleted"
+          defaultValue="true"
           value={filters.isDeleted}
           onChange={handleFilterChange}
           style={styles.select}
@@ -174,6 +175,7 @@ const Registrations = () => {
             <th style={styles.th}>Registered Events</th>
             <th style={styles.th}>Payment Status</th>
             <th style={styles.th}>Amount</th>
+            <th style={styles.th}>School</th>
             <th style={styles.th}>Team Members</th>
           </tr>
         </thead>
@@ -194,6 +196,7 @@ const Registrations = () => {
                     registration.payment.paymentStatus}
                 </td>
                 <td style={styles.td}>{registration.amount}</td>
+                <td style={styles.td}>{registration.school}</td>
                 <td style={styles.td}>
                   <ul style={styles.list}>
                     {registration.team &&

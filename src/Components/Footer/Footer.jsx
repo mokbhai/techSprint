@@ -100,13 +100,13 @@ const Footer = ({ glowingBorder }) => {
                   </a>
 
                   {/* Aniket Mishra */}
-                  {/* <a
+                  <a
                     href="https://github.com/aniket992/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center" // Center content
                   >
-                    <div className="rounded-full overflow-hidden w-24 h-24 border-2 border-red-600 opacity-70 hover:opacity-100 hover:rounded-none">
+                    <div className="rounded-full overflow-hidden w-24 h-24 border-2 border-blue-600 opacity-70 hover:opacity-100 hover:rounded-none">
                       <img
                         src="https://avatars.githubusercontent.com/u/78945155?v=4"
                         alt="Aniket Mishra"
@@ -116,7 +116,7 @@ const Footer = ({ glowingBorder }) => {
                     <p className="text-slate-300 font-sans text-xl mt-2">
                       Aniket Mishra
                     </p>
-                  </a> */}
+                  </a>
                 </div>
               </div>
             </div>

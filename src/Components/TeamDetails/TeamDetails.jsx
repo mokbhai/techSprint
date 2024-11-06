@@ -331,7 +331,7 @@ const TeamDetails = ({ teamDetails, setTeamDetails }) => {
               onChange={(e) =>
                 handleInputChange(index, "class", e.target.value)
               }
-              className="w-full h-12 border px-3 py-2  bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80 mb-2"
             >
               <option value="">Select Class</option>
               <option value="5th">5th</option>
@@ -366,7 +366,7 @@ const TeamDetails = ({ teamDetails, setTeamDetails }) => {
               onChange={(e) =>
                 handleInputChange(index, "gender", e.target.value)
               }
-              className="w-full h-12 border px-3 py-2  bg-slate-400 text-black placeholder:text-black placeholder:opacity-80 rounded mb-2"
+              className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80 mb-2"
             >
               <option value="">Select Gender</option>
               <option value="Male">Male</option>

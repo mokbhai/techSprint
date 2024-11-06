@@ -35,6 +35,7 @@ const Registration = () => {
         JSON.parse(storedTeamDetails) || {
           // Provide a default value
           teamName: "",
+          school: "",
           teamMembers: [
             {
               name: "",
@@ -52,6 +53,7 @@ const Registration = () => {
       return {
         // Default value on error
         teamName: "",
+        school: "",
         teamMembers: [
           {
             name: "",
@@ -131,6 +133,12 @@ const Registration = () => {
       teamName: e.target.value,
     }));
   };
+  const handleSchoolChange = (e) => {
+    setTeamDetails((prev) => ({
+      ...prev,
+      school: e.target.value,
+    }));
+  };
 
   // Calculate total event amount based on selected events and accommodation fees
   const calculateTotalAmount = () => {
@@ -188,6 +196,11 @@ const Registration = () => {
     // Validate that the team name is filled
     if (!teamDetails.teamName.trim()) {
       alert("Please enter a team name.");
+      return;
+    }
+
+    if (!teamDetails.school.trim()) {
+      alert("Please enter a School name.");
       return;
     }
 
@@ -327,6 +340,7 @@ const Registration = () => {
     // Prepare the registration payload
     const registrationData = {
       teamName: teamDetails.teamName,
+      school: teamDetails.school,
       team,
       eventIds: selectedEventIds,
       amount: totalAmount,
@@ -408,12 +422,26 @@ const Registration = () => {
         {/* Team Name Input */}
         <div className="flex flex-col md:flex-row gap-2 opacity-80">
           <div className="mb-5 border p-4  md:w-1/2">
-            <h2 className="text-2xl mb-4">Team Name*:</h2>
+            <h2 className="text-2xl mb-2">Team Name*:</h2>
             <input
               type="text"
               value={teamDetails.teamName}
               onChange={handleTeamNameChange}
               placeholder="Team Name"
+              className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80  mb-4"
+              required
+            />{" "}
+            <div className="flex flex-wrap md:flex-row gap-2 opacity-80 items-center">
+              <h2 className="text-2xl mb-2">School Name, City, State*: </h2>
+              <p className="">
+                Example: Delhi Public School, Jalandhar, Punjab.
+              </p>
+            </div>
+            <input
+              type="text"
+              value={teamDetails.school}
+              onChange={handleSchoolChange}
+              placeholder="School Name, City, State"
               className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80"
               required
             />

@@ -212,6 +212,7 @@ const EventPage = () => {
                           </button>
                         )}
                       </div>
+                      <p className="">Please note Rules may change</p>
                     </div>
                   </div>
                 </div>
