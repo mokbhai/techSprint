@@ -6,22 +6,30 @@ const ConfirmationPopup = ({ details, onClose, onSubmit }) => {
   return (
     <div className="fixed inset-0  bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
       <div className="bg-gray-900 border-black border-4 font-bold tracking-wider  text-l p-6 rounded-lg shadow-lg w-1/2 text-slate-300 h-4/5 overflow-y-auto my-8">
-        <h2 className="text-2xl font-bold mb-4 text-center text-orange-500">
+        <h2 className="text-2xl font-bold mb-4 text-center text-yellow-600">
           Confirm Your Details
         </h2>
 
         {/* Display the team name */}
         <div className="mb-4 flex gap-12">
           <div>
-            <h3 className="font-bold text-lg text-red-600 ">Team Name:</h3>
+            <h3 className="font-bold text-lg text-yellow-600 ">Team Name:</h3>
           </div>
           <p className=" text-2xl text-slate-300 ">{details.teamName}</p>
+        </div>
+
+        {/* Display the team name */}
+        <div className="mb-4 flex gap-12">
+          <div>
+            <h3 className="font-bold text-lg text-yellow-600 ">Mentor:</h3>
+          </div>
+          <p className=" text-2xl text-slate-300 ">{details.mentor}</p>
         </div>
 
         {/* Display the team leader's details */}
         <div className="mb-4 flex gap-9">
           <div className="">
-            <h3 className="font-bold text-lg text-red-600">Team Leader:</h3>
+            <h3 className="font-bold text-lg text-yellow-600">Team Leader:</h3>
           </div>
           <div className="space-y-2  ">
             <div className="flex gap-5">
@@ -51,49 +59,57 @@ const ConfirmationPopup = ({ details, onClose, onSubmit }) => {
           </div>
         </div>
 
-        <div className="mb-4 flex gap-5">
-          <div className="">
-            <h3 className="font-bold text-lg text-red-600">Team Member:</h3>
+        {details.teamMembers && (
+          <div className="mb-4 flex gap-5">
+            <div className="">
+              <h3 className="font-bold text-lg text-yellow-600">
+                Team Member:
+              </h3>
+            </div>
+            <div className=" flex gap-5 ">
+              {details.teamMembers.map((member, index) => (
+                <div key={index} className="border rounded p-3">
+                  <p className="font-semibold text-blue-500 underline">
+                    Member {index + 1}
+                  </p>
+                  <div className="flex gap-5  ">
+                    <p className="font-semibold text-blue-500">Name:</p>
+                    <p>{member.fullname}</p>
+                  </div>
+                  <div className="flex gap-6">
+                    <p className="font-semibold text-blue-500">Class:</p>
+                    <p>{member.class}</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <p className="font-semibold text-blue-500">Phone:</p>
+                    <p>{member.phoneNumber}</p>
+                  </div>
+                  <div className="flex gap-6">
+                    <p className="font-semibold text-blue-500">Email:</p>
+                    <p>{member.email}</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <p className="font-semibold text-blue-500">Gender:</p>
+                    <p>{member.gender}</p>
+                  </div>
+                  <div className="flex gap-5">
+                    <p className="font-semibold text-blue-500">
+                      Accommodation:
+                    </p>
+                    <p>{member.optAccomodation ? "Yes" : "No"}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className=" flex gap-5 ">
-            {details.teamMembers.map((member, index) => (
-              <div key={index} className="border rounded p-3">
-                <p className="font-semibold text-blue-500 underline">
-                  Member {index + 1}
-                </p>
-                <div className="flex gap-5  ">
-                  <p className="font-semibold text-blue-500">Name:</p>
-                  <p>{member.fullname}</p>
-                </div>
-                <div className="flex gap-6">
-                  <p className="font-semibold text-blue-500">Class:</p>
-                  <p>{member.class}</p>
-                </div>
-                <div className="flex gap-4">
-                  <p className="font-semibold text-blue-500">Phone:</p>
-                  <p>{member.phoneNumber}</p>
-                </div>
-                <div className="flex gap-6">
-                  <p className="font-semibold text-blue-500">Email:</p>
-                  <p>{member.email}</p>
-                </div>
-                <div className="flex gap-2">
-                  <p className="font-semibold text-blue-500">Gender:</p>
-                  <p>{member.gender}</p>
-                </div>
-                <div className="flex gap-5">
-                  <p className="font-semibold text-blue-500">Accommodation:</p>
-                  <p>{member.optAccomodation ? "Yes" : "No"}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        )}
 
         {/* Display selected events */}
         <div className="mb-4 flex gap-2">
           <div className="">
-            <h3 className="font-bold text-lg text-red-600">Selected Events:</h3>
+            <h3 className="font-bold text-lg text-yellow-600">
+              Selected Events:
+            </h3>
           </div>
           <div className="space-y-1">
             {details.selectedEvents.map((event, index) => (

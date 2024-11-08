@@ -36,6 +36,11 @@ const Registration = () => {
           // Provide a default value
           teamName: "",
           school: "",
+          mentor: {
+            name: "",
+            quali: "",
+            phone: "",
+          },
           teamMembers: [
             {
               name: "",
@@ -54,6 +59,11 @@ const Registration = () => {
         // Default value on error
         teamName: "",
         school: "",
+        mentor: {
+          name: "",
+          quali: "",
+          phone: "",
+        },
         teamMembers: [
           {
             name: "",
@@ -133,10 +143,22 @@ const Registration = () => {
       teamName: e.target.value,
     }));
   };
+
   const handleSchoolChange = (e) => {
     setTeamDetails((prev) => ({
       ...prev,
       school: e.target.value,
+    }));
+  };
+
+  const handleMentorChange = (event) => {
+    const { name, value } = event.target;
+    setTeamDetails((prevTeamDetails) => ({
+      ...prevTeamDetails,
+      mentor: {
+        ...prevTeamDetails.mentor,
+        [name]: value,
+      },
     }));
   };
 
@@ -204,6 +226,18 @@ const Registration = () => {
       return;
     }
 
+    const mentor =
+      teamDetails.mentor.name +
+      " " +
+      teamDetails.mentor.phone +
+      " " +
+      teamDetails.mentor.quali;
+
+    if (!mentor.trim()) {
+      alert("Please enter a Mentor details.");
+      return;
+    }
+
     // Validate team leader's details (assuming team leader is the first member)
     const teamLeader = teamDetails.teamMembers[0];
     if (
@@ -223,6 +257,11 @@ const Registration = () => {
 
     if (!phoneRegex.test(teamLeader.phone)) {
       alert("Please enter a valid 10-digit phone number for the team leader.");
+      return;
+    }
+
+    if (!phoneRegex.test(teamDetails.mentor.phone)) {
+      alert("Please enter a valid 10-digit phone number for the Mentor.");
       return;
     }
 
@@ -341,6 +380,7 @@ const Registration = () => {
     const registrationData = {
       teamName: teamDetails.teamName,
       school: teamDetails.school,
+      mentor,
       team,
       eventIds: selectedEventIds,
       amount: totalAmount,
@@ -384,6 +424,12 @@ const Registration = () => {
     setTeamDetails({
       // Reset the state to the default values
       teamName: "",
+      school: "",
+      mentor: {
+        name: "",
+        quali: "",
+        phone: "",
+      },
       teamMembers: [
         {
           name: "",
@@ -442,10 +488,11 @@ const Registration = () => {
               value={teamDetails.school}
               onChange={handleSchoolChange}
               placeholder="School Name, City, State"
-              className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80"
+              className="w-full border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80 mb-2"
               required
             />
           </div>
+
           <div className="mb-5 border p-4 md:w-1/2">
             <h2 className="text-2xl  mb-4 ">Registration Info:</h2>
             <p>* means Required</p>
@@ -461,6 +508,36 @@ const Registration = () => {
           </div>
         </div>
 
+        <div className="flex flex-col md:flex-row gap-2 opacity-80 mb-5 border p-4">
+          <input
+            type="text"
+            name="name"
+            value={teamDetails.mentor ? teamDetails.mentor?.name : ""}
+            onChange={handleMentorChange}
+            placeholder="Mentor Name"
+            className="w-full lg:w-1/3 border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80"
+            required
+          />
+
+          <input
+            type="text"
+            name="quali"
+            value={teamDetails.mentor ? teamDetails.mentor?.quali : ""}
+            onChange={handleMentorChange}
+            placeholder="Mentor Qualifications"
+            className="w-full lg:w-1/3 border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80"
+            required
+          />
+          <input
+            type="text"
+            name="phone"
+            value={teamDetails.mentor ? teamDetails.mentor?.phone : ""}
+            onChange={handleMentorChange}
+            placeholder="Mentor Phone"
+            className="w-full lg:w-1/3 border px-3 py-2 bg-slate-400 font-sans placeholder:font-normal text-black font-semibold text-lg rounded placeholder:text-black placeholder:opacity-80"
+            required
+          />
+        </div>
         {/* Team Details */}
         <TeamDetails
           teamDetails={teamDetails}
@@ -521,6 +598,7 @@ const Registration = () => {
           //  details={registrationData}
           details={{
             teamName: finalData.teamName,
+            mentor: finalData.mentor,
             teamLeader: finalData.team[0],
             teamMembers: finalData.team.slice(1),
             selectedEvents: getSelectedEventNames(), // Pass the event names instead of IDs

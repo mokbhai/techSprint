@@ -198,6 +198,7 @@ const Registrations = () => {
                 <td style={styles.td}>{registration.amount}</td>
                 <td style={styles.td}>{registration.school}</td>
                 <td style={styles.td}>
+                  <p>mentor: {registration.mentor}</p>
                   <ul style={styles.list}>
                     {registration.team &&
                       registration.team.map((member) => (
