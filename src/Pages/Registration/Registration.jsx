@@ -505,6 +505,7 @@ const Registration = () => {
               events only
             </p>
             <p>Accommodation Fee: ₹{totalAccommodationFee} per opted member</p>
+            <p>Accommodation will be provided from 18th evening to 20th evening </p>
           </div>
         </div>
 
