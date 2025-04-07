@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /TechSprint
 
-COPY .. /TechSprint
+COPY . .
 
 RUN npm install
 
